@@ -48,7 +48,7 @@ export default class Upload extends Component {
     const data = new FormData();
 
     data.append("file", uploadedFile.file, uploadedFile.name);
-
+    console.log(data, 'teste')
     api
       .post("file", data, {
         onUploadProgress: e => {

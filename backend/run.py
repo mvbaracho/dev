@@ -3,7 +3,9 @@ from flask_cors import CORS
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, create_access_token
 
+
 app = Flask(__name__)
+# 
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
@@ -12,6 +14,9 @@ def create_app(config_filename):
 
     from app import api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
+
+    from resources.FilesRegression import files_regression
+    app.register_blueprint(files_regression, url_prefix='/api')
 
     from Model import db
     db.init_app(app)
@@ -23,4 +28,4 @@ def create_app(config_filename):
 
 if __name__ == "__main__":
     app = create_app("config")
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='127.0.0.1')

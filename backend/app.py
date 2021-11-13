@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, app
 from flask_restful import Api
 from resources.Lms import LmsResource
 from resources.Login import Login
@@ -19,6 +19,7 @@ from resources.Download import Download
 from resources.Datasource import Datasource
 from resources.File import File
 from resources.Phenomenon import Phenomenon
+from resources.TrainTestRegression import TrainTestRegression
 
 api_bp = Blueprint('api', __name__)
 api = Api(api_bp)
@@ -35,6 +36,7 @@ api.add_resource(Indicator, '/indicator')
 api.add_resource(PreProcessing, '/pre-processing')
 api.add_resource(Chart, '/chart')
 api.add_resource(Train, '/train')
+api.add_resource(TrainTestRegression, '/train-regression')
 api.add_resource(TrainStatus, '/train-status')
 api.add_resource(TrainModelResource, '/train-model', '/train-model/<string:key>')
 api.add_resource(TrainMetric, '/train-metric')

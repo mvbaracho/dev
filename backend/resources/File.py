@@ -45,6 +45,8 @@ class File(Resource):
     @jwt_required
     def post(self):
         try:
+            print('chegou')
+            print(request)
             if 'file' not in request.files:
                 return {'msg': 'No file part'}, 500
 

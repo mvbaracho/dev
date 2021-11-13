@@ -37,7 +37,6 @@ class Indicator(Resource):
         path = f"{upload_folder}/{file.file_id}"
 
         df = pd.read_csv(path)
-
         for column in df.columns:
             indicators.append({
                 'value': column,

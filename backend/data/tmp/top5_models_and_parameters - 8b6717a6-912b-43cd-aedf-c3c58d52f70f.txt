@@ -1,0 +1,11 @@
+[AdaBoostRegressor(base_estimator=None, learning_rate=1.0, loss='linear',
+                  n_estimators=50, random_state=7320), LinearRegression(copy_X=True, fit_intercept=True, n_jobs=-1, normalize=False), BayesianRidge(alpha_1=1e-06, alpha_2=1e-06, alpha_init=None,
+              compute_score=False, copy_X=True, fit_intercept=True,
+              lambda_1=1e-06, lambda_2=1e-06, lambda_init=None, n_iter=300,
+              normalize=False, tol=0.001, verbose=False), Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None,
+      normalize=False, random_state=7320, solver='auto', tol=0.001), LGBMRegressor(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+              importance_type='split', learning_rate=0.1, max_depth=-1,
+              min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+              n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+              random_state=7320, reg_alpha=0.0, reg_lambda=0.0, silent=True,
+              subsample=1.0, subsample_for_bin=200000, subsample_freq=0)]

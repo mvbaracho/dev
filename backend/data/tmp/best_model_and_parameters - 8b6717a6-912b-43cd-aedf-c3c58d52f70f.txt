@@ -1,0 +1,8 @@
+BaggingRegressor(base_estimator=AdaBoostRegressor(base_estimator=None,
+                                                  learning_rate=0.0005,
+                                                  loss='square',
+                                                  n_estimators=40,
+                                                  random_state=7320),
+                 bootstrap=True, bootstrap_features=False, max_features=1.0,
+                 max_samples=1.0, n_estimators=10, n_jobs=None, oob_score=False,
+                 random_state=7320, verbose=0, warm_start=False)

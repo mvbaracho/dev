@@ -11,6 +11,7 @@ class Course(Resource):
     def post(self):
         try:
             payload = request.get_json()
+            print(request.get_json())
 
             if 'datasource' not in payload:
                 return {'msg': 'Datasource not found'}, 500
