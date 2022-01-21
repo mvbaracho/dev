@@ -5,6 +5,8 @@ from dask.distributed import Client
 from flask import Blueprint
 from io import BytesIO
 from flask import send_from_directory
+from zipfile import ZipFile
+
 
 import traceback
 from flask import request, current_app, make_response, jsonify, Response
@@ -28,7 +30,7 @@ def get_images_regression(id):
         if not id:
             return {'msg': f'{id} is empty'}, 500
 
-        images_regression = ['cooks', 'error', 'learning_curve', 'real x predict', 'residuals']
+        images_regression = ['cooks', 'error', 'learning_curve', 'real_predict', 'residuals']
         temp_folder = current_app.config.get('TEMP_FOLDER')
         resp = {}
         for image_name in images_regression:
@@ -108,9 +110,10 @@ def top5_regression(id):
         
 
         temp_folder = current_app.config.get('TEMP_FOLDER')
-        top5_models_parameters = 'top5_models_and_parameters - ' + id + '.txt'
+        compare_table = 'compare_table - ' + id + '.csv'
 
-        return send_from_directory(temp_folder, top5_models_parameters, as_attachment = True)
+
+        return send_from_directory(temp_folder, compare_table, as_attachment = True)
 
     except:
         traceback.print_exc()
@@ -129,6 +132,62 @@ def best_parameters_model_regression(id):
 
 
         return send_from_directory(temp_folder, best_model_parameters, as_attachment = True)
+
+    except:
+        traceback.print_exc()
+        return {"msg": "Error on POST Train"}, 500
+
+@files_regression.route('/rmse/<string:id>', methods=['GET'])
+def rmse(id):
+    try:
+        
+        if not id:
+            return {'msg': f'{id} is empty'}, 500
+        
+
+        temp_folder = current_app.config.get('TEMP_FOLDER')
+        best_model_parameters = 'rmse - ' + id + '.txt'
+
+
+        return send_from_directory(temp_folder, best_model_parameters, as_attachment = True)
+
+    except:
+        traceback.print_exc()
+        return {"msg": "Error on POST Train"}, 500
+
+
+@files_regression.route('/files-download/<string:id>', methods=['GET'])
+def get_zip_files(id):
+    try:
+        
+        if not id:
+            return {'msg': f'{id} is empty'}, 500
+        
+
+        temp_folder = current_app.config.get('TEMP_FOLDER')
+        resultCsv = temp_folder + '/Resultado - '+ id + '.csv'
+        compare_table = temp_folder + '/compare_table - ' + id + '.csv'
+        real_predicted = temp_folder + '/real_predict - '+ id +'.png'
+        errorImage = temp_folder + '/error - ' + id + '.png'
+        cooksImage = temp_folder + '/cooks - ' + id + '.png'
+        residualsImage = temp_folder + '/residuals - ' + id + '.png'
+        learning_curve = temp_folder + '/learning_curve - ' + id + '.png'
+        modelSaved = temp_folder + '/model-saved - '+ id + '.pkl'
+        rmseName = temp_folder + '/rmse - ' + id + '.txt'    
+
+        zipfile = 'files - ' + id + '.zip'
+        best_model_parameters = temp_folder + '/best_model_and_parameters - ' + id + '.txt'
+        
+        files = [resultCsv, compare_table, real_predicted, errorImage, cooksImage, residualsImage, learning_curve, modelSaved, best_model_parameters, rmseName]
+        zipObj = ZipFile(zipfile, 'w')
+        for file in files:
+            zipObj.write(file)
+        zipObj.close()
+
+        os.rename(os.path.join(os.path.abspath(os.curdir),  zipfile), os.path.join(os.path.abspath(os.curdir), temp_folder + '/' + zipfile))
+
+
+        return send_from_directory(temp_folder, zipfile, mimetype="application/zip", as_attachment = True)
 
     except:
         traceback.print_exc()

@@ -43,7 +43,7 @@ class UploadFileList extends Component {
             </FileInfo>
 
             <div>
-              {!uploadedFile.uploaded &&
+              {!uploadedFile.uploaded && !this.props.dontShow &&
                 !uploadedFile.error && (
                   <CircularProgressbar
                     styles={{

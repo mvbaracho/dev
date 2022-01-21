@@ -9,7 +9,8 @@ import { Creators as ScreenActions } from '../../store/ducks/screen';
 import AddIcon from 'react-feather/dist/icons/plus-circle';
 import TranModelIcon from 'react-feather/dist/icons/package';
 import MonitorIcon from 'react-feather/dist/icons/monitor';
-import { DATASOURCE, TRAIN_MODEL, ADD_TRAIN, LAD } from '../../constants';
+import BarChartIcon  from 'react-feather/dist/icons/bar-chart';
+import { DATASOURCE, TRAIN_MODEL, ADD_TRAIN, LAD, TRAIN_TEST_REGRESSION } from '../../constants';
 
 class SideMenu extends Component {
 
@@ -24,7 +25,6 @@ class SideMenu extends Component {
   }
 
   render() {
-
     const { signOutRequest } = this.props;
     const links = [
       {
@@ -41,6 +41,11 @@ class SideMenu extends Component {
         screen: TRAIN_MODEL,
         component: TRAIN_MODEL,
         icon: <TranModelIcon color={'#FFF'} strokeWidth={this.getStrokeWidth(TRAIN_MODEL)} />
+      },
+      {
+        screen: TRAIN_TEST_REGRESSION,
+        component: TRAIN_TEST_REGRESSION,
+        icon: <BarChartIcon color={'#FFF'} strokeWidth={this.getStrokeWidth(TRAIN_TEST_REGRESSION)} />
       }
     ];
 
