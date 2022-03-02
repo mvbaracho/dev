@@ -225,16 +225,7 @@ class ClusteringPage extends Component {
 
   render() {
     const {returnedID, normalize, normalizationtype, algorithm, features, distrib_feature, num_features, num_clusters, images, metrics} = this.state;
-    const {indicators} = this.props.indicator
-    console.log('Este é o normalize' + normalize)
-    console.log('Este é o método de normalização ' + normalizationtype)
-    console.log('Este é o algoritmo ' + algorithm)
-    console.log('Estas são as features ' + features)
-    console.log('Estas são as features numéricas ' + num_features)
-    console.log('Esta é a distribution feature ' + distrib_feature)
-    console.log('Número de clusters ' + num_clusters)
-    console.log(this.getDataSourceContext())
-    console.log('Este é o returnedID: ' + returnedID)
+    const {indicators} = this.props.indicator;
     
     let featuresList = []
       // esse for pega todos os indicadores selecionados anteriormente pra mandar pro back dps
