@@ -1,0 +1,4 @@
+artifact_location: file:///home/daniel/fmdev/backend/mlruns/2
+experiment_id: '2'
+lifecycle_stage: active
+name: no_logging

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/daniel/fmdev/backend/mlruns/1/0763cdc872024773bc4293c6c84d1613/artifacts
+end_time: 1637350900499
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: 0763cdc872024773bc4293c6c84d1613
+run_uuid: 0763cdc872024773bc4293c6c84d1613
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1637350900408
+status: 3
+tags: []
+user_id: daniel

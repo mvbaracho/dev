@@ -30,3 +30,14 @@ export const downloadStream = ({ id, content, action }) => {
   document.body.appendChild(link);
   link.click();
 }
+
+export const downloadStreamClust = ({ id, content }) => {
+  const url = window.URL.createObjectURL(new Blob([content]));
+  const link = document.createElement('a');
+  const extension = 'csv';
+
+  link.href = url;
+  link.setAttribute('download', `${id}.${extension}`);
+  document.body.appendChild(link);
+  link.click();
+}

@@ -33,6 +33,7 @@ class TrainConfigDialog extends Component {
   submit = () => {
     const { train, test, generations, kfold } = this.state;
     const { onSubmit } = this.props;
+    console.log(onSubmit)
 
     if (!train || train <= 0) {
       this.renderWarningMsg('O percentual da base de treinamento é inválido!');

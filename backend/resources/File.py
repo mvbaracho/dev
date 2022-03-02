@@ -49,12 +49,18 @@ class File(Resource):
                 return {'msg': 'No file part'}, 500
 
             file = request.files['file']
+            #teste
+            print(file)
             extension = get_extension_from_path(file.filename)
             upload_folder = current_app.config.get('UPLOAD_FOLDER')
+            #teste
+            print(upload_folder)
             file_id = f"{str(uuid.uuid4())}{extension}"
 
             if file and self.allowed_file(file.filename):
                 file.save(os.path.join(upload_folder, file_id))
+                #teste
+                print(os.path.join(upload_folder, file_id))
             else:
                 return {'msg': 'Extension file invalid'}, 500
             

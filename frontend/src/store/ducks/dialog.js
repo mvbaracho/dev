@@ -19,7 +19,8 @@ export const INITIAL_STATE = Immutable({
   trainConfig: false,
   trainSave: false,
   trainMetrics: false,
-  trainAlgorithm: false
+  trainAlgorithm: false,
+  clustering: false
 });
 
 /* Reducers */

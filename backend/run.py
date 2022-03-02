@@ -13,6 +13,10 @@ def create_app(config_filename):
     from app import api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
 
+    from resources.FilesClustering import files_clustering
+    app.register_blueprint(files_clustering, url_prefix='/api')
+
+
     from Model import db
     db.init_app(app)
 
@@ -23,4 +27,4 @@ def create_app(config_filename):
 
 if __name__ == "__main__":
     app = create_app("config")
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='127.0.0.1')

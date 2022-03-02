@@ -130,7 +130,7 @@ class TrainModel extends Component {
 
   handleMenuItemClick = (option, event) => {
     const { model_id } = this.state.itemSelected;
-
+   
     if (option.action === 'download_data') {
       this.props.getDownload(model_id, PRE_PROCESSING_RAW);
     }

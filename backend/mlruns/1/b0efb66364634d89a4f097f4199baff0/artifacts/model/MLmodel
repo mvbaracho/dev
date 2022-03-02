@@ -1,0 +1,26 @@
+artifact_path: model
+flavors:
+  python_function:
+    env: conda.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    python_version: 3.7.6
+  sklearn:
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 0.23.0
+run_id: b0efb66364634d89a4f097f4199baff0
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  type: dataframe
+signature:
+  inputs: '[{"name": "Unnamed: 0", "type": "long"}, {"name": "VAR08", "type": "long"},
+    {"name": "VAR09", "type": "long"}, {"name": "VAR12", "type": "long"}, {"name":
+    "VAR18", "type": "long"}, {"name": "VAR20", "type": "long"}, {"name": "VAR21",
+    "type": "long"}, {"name": "VAR22", "type": "long"}, {"name": "VAR23", "type":
+    "long"}, {"name": "VAR24", "type": "string"}, {"name": "VAR31", "type": "long"},
+    {"name": "VAR33", "type": "long"}, {"name": "VAR34", "type": "long"}, {"name":
+    "DESEMPENHO", "type": "string"}, {"name": "VAR36", "type": "long"}]'
+  outputs: null
+utc_time_created: '2021-11-20 19:12:00.206161'

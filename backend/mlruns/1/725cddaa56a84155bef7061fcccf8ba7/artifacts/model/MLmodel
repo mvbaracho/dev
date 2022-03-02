@@ -1,0 +1,23 @@
+artifact_path: model
+flavors:
+  python_function:
+    env: conda.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    python_version: 3.7.6
+  sklearn:
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 0.23.0
+run_id: 725cddaa56a84155bef7061fcccf8ba7
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  type: dataframe
+signature:
+  inputs: '[{"name": "Unnamed: 0", "type": "long"}, {"name": "sepal_length", "type":
+    "double"}, {"name": "sepal_width", "type": "double"}, {"name": "petal_length",
+    "type": "double"}, {"name": "petal_width", "type": "double"}, {"name": "species",
+    "type": "string"}]'
+  outputs: null
+utc_time_created: '2021-11-16 17:48:34.990973'

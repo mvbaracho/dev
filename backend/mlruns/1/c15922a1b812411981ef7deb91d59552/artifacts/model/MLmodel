@@ -1,0 +1,18 @@
+artifact_path: model
+flavors:
+  sklearn:
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 0.23.0
+run_id: c15922a1b812411981ef7deb91d59552
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  type: dataframe
+signature:
+  inputs: '[{"name": "Unnamed: 0", "type": "long"}, {"name": "sepal_length", "type":
+    "double"}, {"name": "sepal_width", "type": "double"}, {"name": "petal_length",
+    "type": "double"}, {"name": "petal_width", "type": "double"}, {"name": "species",
+    "type": "string"}]'
+  outputs: null
+utc_time_created: '2021-11-19 14:34:19.853496'

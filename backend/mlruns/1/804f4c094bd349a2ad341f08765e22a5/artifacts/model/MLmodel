@@ -1,0 +1,22 @@
+artifact_path: model
+flavors:
+  python_function:
+    env: conda.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    python_version: 3.7.6
+  sklearn:
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 0.23.0
+run_id: 804f4c094bd349a2ad341f08765e22a5
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  type: dataframe
+signature:
+  inputs: '[{"name": ",Curso,Semestre,Per\u00edodo,Nome da Disciplina,ID da Disciplina,Data
+    de In\u00edcio,Data de Final,Nome do Aluno,ID do Aluno,VAR01,VAR02,VAR03,VAR04,VAR05,VAR06,VAR07,VAR08,VAR09,VAR10,VAR12,VAR13,VAR14,VAR15,VAR16,VAR17,VAR18,VAR19,VAR20,VAR21,VAR22,VAR23,VAR24,VAR25,VAR28,VAR29,VAR30,VAR31,VAR31b,VAR31c,VAR32a,VAR32b,VAR32c,VAR32d,VAR33,VAR34,VAR35,PROVA01,PROVA01_2CHAMADA,PRIMEIRA_PROVA,PROVA02,PROVA02_2CHAMADA,SEGUNDA_PROVA,MEDIA_PROVAS,FORUM01,FORUM02,FORUM03,FORUM04,MEDIA_FORUM,WEBQUEST01,WEBQUEST02,MEDIA_WEBQUEST,DESEMPENHO,DESEMPENHO_BINARIO",
+    "type": "string"}]'
+  outputs: null
+utc_time_created: '2021-11-17 11:20:00.273117'

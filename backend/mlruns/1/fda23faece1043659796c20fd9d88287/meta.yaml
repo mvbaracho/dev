@@ -1,0 +1,15 @@
+artifact_uri: file:///home/daniel/fmdev/backend/mlruns/1/fda23faece1043659796c20fd9d88287/artifacts
+end_time: 1637089517850
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: fda23faece1043659796c20fd9d88287
+run_uuid: fda23faece1043659796c20fd9d88287
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1637089517786
+status: 3
+tags: []
+user_id: daniel

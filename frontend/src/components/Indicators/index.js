@@ -128,8 +128,9 @@ class Indicators extends Component {
   render() {
     const { course, subject, semester, indicator } = this.props;
     const { source, indicators, targetSelected, courseSelected,
-      subjectSelected, semesterSelected } = this.props.indicator;
+      subjectSelected, semesterSelected} = this.props.indicator;
     const dataSourceContext = this.getDataSourceContext();
+    console.log(this.getDataSourceId())
 
     return (
       <ConfigContainer size='big'>

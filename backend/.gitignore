@@ -4,3 +4,4 @@ venv
 dask-worker-space
 .env
 .env.development
+node_modules
