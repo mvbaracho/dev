@@ -11,11 +11,13 @@ import Indicators from '../../components/Indicators';
 import PreProcessing from '../../components/PreProcessing';
 import { Creators as ScreenActions } from '../../store/ducks/screen';
 import { Creators as LmsActions } from '../../store/ducks/lms';
-import { DATASOURCE, INDICATORS, PRE_PROCESSING, TRAIN, TRAIN_MODEL, LAD, TRAIN_TEST_REGRESSION } from '../../constants';
+import { DATASOURCE, INDICATORS, PRE_PROCESSING, TRAIN, TRAIN_MODEL, LAD, TRAIN_TEST_REGRESSION, CLUSTERING, INDICATORS2 } from '../../constants';
 import Train from '../../components/Train';
 import TrainModel from '../TrainModel';
 import Dashboard from '../../components/Dashboard';
 import Regression from '../../components/Regression';
+import ClusteringPage from '../../components/ClusteringPage';
+import Indicators2 from '../../components/Indicators2';
 
 class Main extends Component {
 
@@ -52,6 +54,14 @@ class Main extends Component {
 
     if(activeComponent === TRAIN_TEST_REGRESSION) {
       return <Regression />;
+    }
+
+    if (activeComponent === CLUSTERING){
+      return <ClusteringPage />;
+    }
+
+    if (activeComponent === INDICATORS2){
+      return <Indicators2 />;
     }
 
     return null;

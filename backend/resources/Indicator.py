@@ -35,9 +35,12 @@ class Indicator(Resource):
 
         upload_folder = current_app.config.get('UPLOAD_FOLDER')
         path = f"{upload_folder}/{file.file_id}"
+        # engine="python" serve para reconhecer o separador do arquivo
+        df = pd.read_csv(path, sep=None, engine="python")
 
-        df = pd.read_csv(path)
         for column in df.columns:
+            if column == 'Unnamed: 0':
+                continue
             indicators.append({
                 'value': column,
                 'label': column

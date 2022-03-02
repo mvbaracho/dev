@@ -11,15 +11,16 @@ import Button from '../../styles/Button';
 import { actions as toastrActions } from 'react-redux-toastr';
 import Select from 'react-select';
 import { selectStyle } from '../../styles/global';
-
+// define constantes para usar na drop-down
 const versions = [
   { value: '3.8.0', label: '3.8.0' },
   { value: '3.7.0', label: '3.7.0' },
   { value: '3.6.0', label: '3.6.0' }
 ];
-
+// cria a classe MoodleCOnfigDialog, responsável por abrir a dialog do moodle
 class MoodleConfigDialog extends Component {
 
+  // esse método fecha a dialog do moodle
   onClose = () => {
     this.props.setDialog('moodle');
   }
@@ -56,7 +57,9 @@ class MoodleConfigDialog extends Component {
 
   handleChangeInput = e => this.props.setDialogData({ [e.target.name]: e.target.value });
 
-  handleChange = (item, name) => this.props.setDialogData({ [name]: item });
+  handleChange = (item, name) => {
+    this.props.setDialogData({ [name]: item })
+   }
 
   render() {
     const { url, token, version, description } = this.props.dialog.data || {};

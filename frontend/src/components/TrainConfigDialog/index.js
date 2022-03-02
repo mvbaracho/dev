@@ -31,7 +31,6 @@ class TrainConfigDialog extends Component {
   }
 
   submit = () => {
-    console.log(this.state)
     const { train, test, generations, kfold } = this.state;
     const { onSubmit } = this.props;
 

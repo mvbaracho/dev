@@ -169,7 +169,7 @@ class TrainTestRegression(Resource):
 
             df_train, X_train, X_test, y_train, y_test = self.get_data(file, separator, target, train, scaler)
             
-            clf1 = setup(df_train, target = target, silent = True)
+            clf1 = setup(df_train, target = target, silent = True, html = False)
 
             top5 = compare_models(n_select=5, exclude=['omp'])
 

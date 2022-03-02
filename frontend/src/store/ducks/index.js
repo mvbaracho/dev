@@ -19,6 +19,7 @@ import model_copy from './model_copy';
 import download from './download';
 import data_source from './data_source';
 import phenomenon from './phenomenon';
+//teste
 import { reducer as toastr } from 'react-redux-toastr';
 
 export default history => combineReducers({

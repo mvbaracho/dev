@@ -10,3 +10,7 @@ export const LMS = 'LMS';
 export const CSV = 'CSV';
 export const LAD = 'LAD';
 export const TRAIN_TEST_REGRESSION = 'TT_REG'
+// Adicionado para Clustering
+export const CLUSTERING = 'CLUSTERING';
+// Adicionado para ir para os Indicators de Clustering
+export const INDICATORS2 = 'INDICATORS2';

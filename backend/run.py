@@ -17,6 +17,9 @@ def create_app(config_filename):
 
     from resources.FilesRegression import files_regression
     app.register_blueprint(files_regression, url_prefix='/api')
+    from resources.FilesClustering import files_clustering
+    app.register_blueprint(files_clustering, url_prefix='/api')
+
 
     from Model import db
     db.init_app(app)

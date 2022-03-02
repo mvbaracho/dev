@@ -48,7 +48,6 @@ class Regression extends Component {
   };
 
   handleUpload = files => {
-    console.log(files)
     const uploadedFiles = files.map(file => ({
       file,
       id: null,
@@ -85,7 +84,6 @@ class Regression extends Component {
   }
   
   sepChange = (e) => {
-    console.log(e)
     this.setState({ sep: e});
   };
   
@@ -182,7 +180,6 @@ class Regression extends Component {
     api
     .get(("files-download/"+idExec), { headers: { 'Content-Type': 'application/zip' }})
     .then(response => {
-      console.log(response)
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       const extension = 'zip';
@@ -201,7 +198,6 @@ class Regression extends Component {
   render(){ 
     
     const { name, uploadedFiles, submitPost, idExec, metrics, imagesResults, top_five, best_model, rmse } = this.state;
-    console.log(name)
     return (
       <PerfectScrollbar style={{ width: '100%', overflowX: 'auto' }}>
           <ConfigContainer  size='big' style={{ color: '#000' , paddingLeft: '20px'}}>
@@ -323,9 +319,6 @@ class Regression extends Component {
                     <h2>Cooks</h2>
                     <img src={'data:image/png;base64,' + imagesResults.cooks} alt={'cooks'} style={{ maxWidth: '500px' }}/>
                   </div>
-                </div>
-                <div class="ps-4 p2 pe-4 pt-2">
-                  <Button style={{marginBottom: '20px', marginTop: '20px'}} onClick={this.download_files.bind(this)}>Baixar arquivos</Button>
                 </div>
               </div>
             )}
